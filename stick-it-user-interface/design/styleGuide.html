@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>My Style Guide</title>
+    
+    <!--  Place Custom Styles Below -->
+    <style>
+        @font-face {
+            font-family: "Apex Mk2";
+            src: url("Fonts/Apex Mk2/ApexMk2-Regular.otf");
+        }
+
+        @font-face {
+            font-family: "Octin College Regular";
+            src: url("Fonts/octin college rg.ttf");
+        }
+
+
+        #apex {
+            font-family: "Apex Mk2";
+            font-size: 20px;
+        }
+
+        #octin {
+            font-family: "Octin College Regular";
+            font-size: 20px;
+        }
+
+        #helvetica {
+            font-family: Helvetica;
+        }
+
+        body {
+            font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+            color: black;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #heading1 {
+            font-family: "Octin College Regular";
+            font-size: 34px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-family: "Octin College Regular";
+        }
+
+        button {
+            background-color: #e4e6eb;
+            border-radius: 3.5px;
+            padding: 10px;
+            color: black;
+            font-family: "Octin College Regular";
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .inputLabel {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        input.inputField {
+            padding: 5px;
+            border: 1px solid #a9abad;
+        }
+
+        div.box {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            margin: 0 10px 0 10px;
+        }
+
+        #primary1 {
+            background-color: #133160;
+        }
+
+        #primary2 {
+            /*background-color: #759bd6;*/
+            background-color: #e4e6eb;
+        }
+
+        #primary3 {
+            background-color: white;
+            border-radius: 1px;
+            border-color: black;
+        }
+
+        .danger {
+            font-weight: bold;
+            color: red;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+
+        svg.svg-inline--fa {
+            color: white;
+        }
+
+        .spacer {
+            margin-top: 25px;
+        }
+
+        #footer {
+            border-top: 1px solid #dddddd;
+            margin-top: 50px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a name="Top"></a>
+    <div class="container">
+        <div class="col-md-9">
+            <!-- About -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="about"></a>My Styles</h1>
+                </div>
+                <p>This page contains specific style guide information for my front end interface.</p>
+            </div>
+            <!-- End About -->
+
+            <!-- Fonts -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="fonts"></a>Font</h1>
+                </div>
+                <p>My application will utilize the "Apex MK2" font for the application title, the "Octin College Regular" font for subheadings, 
+                    and the "Helvetica" font for paragraph text. The "Arial", and "sans-serif" font-families 
+                    will be used for browsers unable to display
+                    the main aforementioned fonts.</p>
+                <p id="apex">Apex MK2</p>
+                <p id="octin">Octin College Regular</p>
+                <p id="helvetica">Helvetica</p>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End Fonts -->
+
+            <!-- Color Theme -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="colorTheme"></a>Color Theme</h1>
+                </div>
+                <p>My application will incorporate the below color scheme in its interface.</p>
+                <div class="box" id="primary1"></div>
+                <div class="box" id="primary2"></div>
+                <div class="box" id="primary3"></div>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End Color Theme -->
+
+            <!-- Headings -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="headings"></a>Headings</h1>
+                </div>
+                <p>The below font sizes and styles are used in the application for various content headings.</p>
+                <h1 id="heading1">Heading 1</h1>
+                <h2>Heading 2</h2>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End Headings -->
+
+            <!-- Buttons -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="buttons"></a>Buttons</h1>
+                </div>
+                <p>The application will feature buttons that contain the below color and shape:</p>
+                <button>My Button</button>
+                <p>This button formatting will be used for the 'Submit' and 'Restart' buttons of the application.</p>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End Buttons -->
+
+            <!-- Form Elements -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="formElements"></a>Form Elements</h1>
+                </div>
+                <p>For the form that the application will contain, it will contain input fields and labels with the below styling:</p>
+                <form>
+                    <label for="position" class="inputLabel">Position: </label>
+                    <select name="position">
+                        <option disabled selected value>---</option>
+                        <option value="C">C</option>
+                        <option value="LW">LW</option>
+                        <option value="RW">RW</option>
+                        <option value="D">D</option>
+                    </select>
+                    
+                </form>
+                <p>These input fields will allow users to enter their user information so that the
+                    application can determine their hockey stick.
+                </p>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End Form Elements -->
+
+            <!-- User Messages -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="messages"></a>Messages</h1>
+                </div>
+                <p>There will be one type of message that can appear on the page: Error. This will appear when the  
+                    user fails to make a selection in all of the input fields.
+                </p>
+                <p class="danger">Error: All fields are required.</p>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End User Messages -->
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">Copyright My Style Guide</p>
+        </div>
+    </div>
+</body>
+
+</html>
