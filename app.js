@@ -21,11 +21,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //files for the user interface
 app.use(express.static(__dirname + "/stick-it-user-interface"));
 
-//Identify database to connect to in postgres
+//Identify database to connect to in postgres - the DATABASE_URL variable is stored
+//in the .env file which is not uploaded to github as it contains sensitive information
+//This will connect the application to the postgres database
 const client = new Client({
   connectionString: process.env.DATABASE_URL
 });
 
+//makes client object global in scope
 global.client = client;
 
 //Connect to the stickit database created in postgres
@@ -40,10 +43,13 @@ app.get("/", (req, res) => {
   res.send("This is the home page");
 });
 
+//allows app to use routes defined in index.js (hockeyRoute is declared above)
 app.use("/", hockeyRoute);
 
+//declares the port number to be used
 const PORT = 3000;
 
+//tells the app to listen on port 3000 and log a message to console when the server is running
 app.listen(PORT, () => console.log(`server is running on port ${PORT}...`));
 
 module.exports = app;
