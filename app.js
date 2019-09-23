@@ -39,14 +39,14 @@ client
   .then(() => console.log("Database connected!"))
   .catch(err => console.log("error connecting to the database", err));
 
-app.get("/", (req, res) => {
-  res.send("This is the home page");
-});
+//app.get("/", (req, res) => {
+  //res.send("This is the home page");
+//});
 
 //allows app to use routes defined in index.js (hockeyRoute is declared above)
 app.use("/", hockeyRoute);
 
-//declares the port number to be used
+//declares the port number to be used - the server will listen on port 3000
 const PORT = 3000;
 
 //tells the app to listen on port 3000 and log a message to console when the server is running
