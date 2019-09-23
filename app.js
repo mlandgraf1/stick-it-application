@@ -17,6 +17,8 @@ app.use(bodyParser.json());
 //allows parsing for nested objects
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//serves static files like images, CSS, JavaScript, etc. - in this case, the static
+//files for the user interface
 app.use(express.static(__dirname + "/stick-it-user-interface"));
 
 //Identify database to connect to in postgres

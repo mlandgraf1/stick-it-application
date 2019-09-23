@@ -156,10 +156,15 @@ function findCurve() {
   return curve;
 }
 
+//function to fire my GET request - this is where the back end is connected to the front end
 function fireGetRequest(event) {
   event.preventDefault();
+
+  //calls the validate_form function to ensure all fields have been filled in
   validate_form();
 
+  //calls conversion functions to convert user input to stick parameters 
+  //and assigns their values to variables
   var ageLevelParam = findAgeLevel();
   var flexParam = findFlex(ageLevelParam);
   var curveParam = findCurve();
@@ -169,14 +174,22 @@ function fireGetRequest(event) {
   // alert(curveParam);
   // alert(priceParam);
 
+  //use fetch method to send network requests to the server and load new information
+  //it will return a promise containing the response 
+  //this fetch method includes the variables defined above in the URL which are used as 
+  //parameters for the GET request
+  //this fetch method also supplies some request options like method and headers
   fetch(`/hockey/${flexParam}/${curveParam}/${ageLevelParam}/${priceParam}`, {
     method: "GET",
     headers: {
       "Content-type": "application/json"
     }
   })
+    //this is an HTTP response not the actual JSON so res.json() is used to extract
+    //the JSON body content from the response
     .then(res => res.json())
     .then(res => {
+      //log the JSON responses received to the console
       console.log(res);
       if(res.errorMsg){
         const error = document.getElementById("data");
@@ -186,12 +199,17 @@ function fireGetRequest(event) {
         renderData(res, dataDisplay);
       }
     })
+    //logs error getting data back to the console
     .catch(err => console.log("error fetching data", err));
 
+    //disables the submit button so that multiple submissions cannot be made
     this.disabled = true;
     this.style.color = "gray";
 }
 
+//this constant will render the data received from the GET request
+//in the browser using the HTML formatting specified below
+//the data will be rendered to a div in the index.html file with the id "data"
 const renderData = (data, dataDisplay) => {
   data.forEach(d => {
     let listWrapper = document.createElement("div");
@@ -212,5 +230,5 @@ const renderData = (data, dataDisplay) => {
     dataDisplay.append(listWrapper);
   });
 };
-
+//calls the fireGetRequest function when the submit button is clicked in the browser
 document.getElementById("submit").addEventListener("click", fireGetRequest);
