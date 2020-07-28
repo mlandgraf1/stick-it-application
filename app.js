@@ -39,9 +39,9 @@ client
   .then(() => console.log("Database connected!"))
   .catch(err => console.log("error connecting to the database", err));
 
-//app.get("/", (req, res) => {
-  //res.send("This is the home page");
-//});
+app.get("/", (req, res) => {
+  res.send("This is the home page");
+});
 
 //allows app to use routes defined in index.js (hockeyRoute is declared above)
 app.use("/", hockeyRoute);
