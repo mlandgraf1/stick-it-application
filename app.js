@@ -47,7 +47,7 @@ client
 app.use("/", hockeyRoute);
 
 //declares the port number to be used - the server will listen on port 3000
-const PORT = 3000;
+const PORT = process.env.port || 3000;
 
 //tells the app to listen on port 3000 and log a message to console when the server is running
 app.listen(PORT, () => console.log(`server is running on port ${PORT}...`));
